@@ -3,7 +3,6 @@ from datetime import date
 from django.urls import reverse
 
 
-
 class Category(models.Model):
     '''Категории'''
     name = models.CharField('Категория', max_length=200, )
@@ -48,6 +47,7 @@ class Genre(models.Model):
 
 
 class Movie(models.Model):
+    """Фильмы"""
     title = models.CharField("Названия фильма", max_length=100)
     tagline = models.CharField('Слоган', max_length=100, default='')
     description = models.TextField('Описане')
@@ -76,7 +76,8 @@ class Movie(models.Model):
         verbose_name_plural = "Фильмы"
 
     def get_absolute_url(self):
-        return reverse('film_detail',kwargs={'slug':self.url})
+        return reverse('film_detail', kwargs={'slug': self.url})
+
 
 class MovieShots(models.Model):
     """Кадры из фильма"""
