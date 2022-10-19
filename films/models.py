@@ -2,7 +2,6 @@ from django.db import models
 from datetime import date
 from django.urls import reverse
 
-
 class Category(models.Model):
     '''Категории'''
     name = models.CharField('Категория', max_length=200, )

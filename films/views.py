@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, View
 
-from .models import Movie
+from .models import Movie, Category
 from .forms import ReviewsForm
 
 
@@ -21,6 +21,7 @@ class MovieDetailViews(DetailView):
     template_name = 'films/movie_detail.html'
 
 
+
 class AddReview(View):
     '''Отправка отзывов'''
 
@@ -29,7 +30,7 @@ class AddReview(View):
         movie = Movie.objects.get(id=pk)
         if form.is_valid():
             form = form.save(commit=False)
-            if request.POST.get('parent',None):
+            if request.POST.get('parent', None):
                 form.parent_id = int(request.POST.get('parent'))
             form.movie = movie
             form.save()
