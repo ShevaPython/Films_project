@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+    'snowpenguin.django.recaptcha3',
 
     'films.apps.FilmsConfig'
 
@@ -118,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -175,7 +176,7 @@ CKEDITOR_CONFIGS = {
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
+            'uploadimage',  # the upload image feature
             # your extra plugins here
             'div',
             'autolink',
@@ -193,3 +194,8 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+RECAPTCHA_PRIVATE_KEY = '6LeHAsYiAAAAADGM4S2KiPwMtXNaZ7EunTAAjBc0'
+RECAPTCHA_PUBLIC_KEY = '6LcmjsYiAAAAAPfaY3jDY4YuPUuq-oS238VMjvNx '
+RECAPTCHA_DEFAULT_ACTION = 'generic'
+RECAPTCHA_SCORE_THRESHOLD = 0.5
+RECAPTCHA_LANGUAGE = 'en'
