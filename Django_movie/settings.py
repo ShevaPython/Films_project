@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'snowpenguin.django.recaptcha3',
 
-    'films.apps.FilmsConfig'
+    'films.apps.FilmsConfig',
+    'contact.apps.ContactConfig',
 
 ]
 
@@ -199,3 +200,13 @@ RECAPTCHA_PUBLIC_KEY = '6LcmjsYiAAAAAPfaY3jDY4YuPUuq-oS238VMjvNx '
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 RECAPTCHA_LANGUAGE = 'en'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+EMAIL_HOST = 'smtp.ukr.net'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'sheva199220@ukr.net'
+EMAIL_HOST_PASSWORD = 'lnH0mQgiG4OPjAWg'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
